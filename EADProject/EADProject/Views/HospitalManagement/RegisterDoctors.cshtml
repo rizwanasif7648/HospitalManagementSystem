@@ -1,0 +1,61 @@
+﻿@model IEnumerable<string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegisterDoctors</title>
+</head>
+<body>
+    <br />
+
+
+        
+        <h2 style="text-align:center"><font color="Blue">Doctor's Details </font></h2>
+    <form class="box" name="regForm" action="AddDoctor" method="post">
+
+        <table>
+            <tr><td> Full name:</td><td>   <input type="text" size="30" name="name" required /></td></tr>
+            <tr><td> Hospital's name:</td><td>   <input type="text" size="30" name="hName" required /></td></tr>
+            <tr>
+                <td>
+                    Speciaist In:
+                    <select name="specialist">
+                        @foreach (var a in Model)
+                        {
+                            <option value=@a>@a</option>
+                        }
+                        <option value="Others">Others...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td> Add :</td><td>   <input type="text" size="30" name="other" /></td></tr>
+            <tr><td> Fee :</td><td>   <input type="number" size="30" name="fee" required /></td></tr>
+            <tr><td> Location:</td><td>   <input type="text" size="30" name="location" required /></td></tr>
+            <tr><td><br /></td></tr>
+
+        </table>
+
+        <br />
+
+        <br />
+        <!--<input type="button" value="submit" />-->
+        <input type="submit" value="Submit" />
+    </form>
+
+
+
+        <br/><br/>
+    <table cellspacing="30"><tr>
+    <td><a class="active" href="~/HospitalManagement/RegisterDoctors">Register a doctor</a></td>
+    <td><a href="~/HospitalManagement/SearchDetails">Edit or Delete a Doctor's Rcord</a></td>
+    <td><a href="~/HospitalManagement/DoctorsDetaiLs">View Records</a></td>
+        <tr></table>
+
+        <br /><br />
+</body>
+</html>

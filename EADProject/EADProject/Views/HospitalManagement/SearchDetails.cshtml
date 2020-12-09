@@ -1,0 +1,32 @@
+﻿@model IEnumerable<string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchDetails</title>
+</head>
+<body>
+
+
+    <h2 style="text-align:center"><font color="Blue">Search Recorcd </font></h2>
+    </div>
+
+    <form name="view" action="viewDetails" method="post">
+        Specialist In:
+        <select name="SpecialistIn">
+            @foreach (var a in Model)
+            {
+                <option value="@a">@a</option>
+            }
+        </select>
+
+        <input type="submit" value="Submit" />
+    </form>
+
+</body>
+</html>

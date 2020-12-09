@@ -1,0 +1,56 @@
+﻿@model EADProject.Models.DRecord
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <br />
+    <div style="align-content:center" class="topnav">
+
+        <a class="active" href="~/HospitalManagement/RegisterDoctors">Home</a>
+        <a href="~/HospitalManagement/SearchDetails">Search Details</a>
+        <a href="~/HospitalManagement/editRecords">Edit/Delete</a>
+
+        <br />
+
+        <h2 style="text-align:center"><font color="Blue">Edit Details </font></h2>
+    </div>
+    <form class="box" name="regForm" action="~/HospitalManagement/Update" method="post">
+
+        <table>
+            <tr><td> Full name:</td><td>   <input type="text" size="30" value="@Model.Name" name="name" required /></td></tr>
+            <tr><td> Hospital's name:</td><td>   <input type="text" size="30" value="@Model.HospitalName" name="hName" required /></td></tr>
+            <tr>
+                <td>
+                    Speciaist In:
+                    <select name="specialist">
+                        @foreach (var a in ViewBag.data)
+                        {
+                            <option value=@a>@a</option>
+                        }
+                        <option value="Others">Others...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td> Add :</td><td>   <input type="text" size="30" name="other" /></td></tr>
+            <tr><td> Fee :</td><td>   <input type="number" value="@Model.Fee" size="30" name="fee" required /></td></tr>
+            <tr><td> Location:</td><td>   <input type="text" size="30" value ="@Model.Location" name="location" required /></td></tr>
+            <tr><td><br /></td></tr>
+
+        </table>
+
+        <br />
+
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+    <br /><br />
+</body>
+</html>

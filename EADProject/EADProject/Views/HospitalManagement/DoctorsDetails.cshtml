@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DoctorsDetails</title>
+</head>
+<body>
+
+    <h2 style="text-align:center"><font color="Blue">Details </font></h2>
+    <table align="center" cellspacing="30">
+        <tr>
+            <th>Concultant's Name</th>
+            <th>Hospital Name</th>
+            <th>Specialist</th>
+            <th>Fee</th>
+            <th>Location</th>
+        </tr>
+
+        @foreach (var s in ViewBag.record)
+        {
+            <tr>
+                <td>@s.Name</td>
+                <td>@s.HospitalName</td>
+                <td>@s.Specialist</td>
+                <td>@s.Fee</td>
+                <td>@s.Location</td>
+            </tr>
+        }
+
+
+    </table>
+
+    <table border="0" align="center" cellspacing="30">
+        <tr>
+            <td><a class="active" href="~/HospitalManagement/RegisterDoctors">Register a doctor</a></td>
+            <td><a href="~/HospitalManagement/SearchDetails">Edit or Delete a Doctor's Rcord</a></td>
+            <td><a href="~/HospitalManagement/DoctorsDetaiLs">View Records</a></td>
+        <tr>
+    </table>
+</body>
+</html>

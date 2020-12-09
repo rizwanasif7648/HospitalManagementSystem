@@ -1,0 +1,53 @@
+﻿@model List<EADProject.Models.DRecord>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>viewDetails</title>
+</head>
+<body>
+
+    <h2 style="text-align:center"><font color="Blue">Edit or Delete </font></h2>
+    <table align="center" cellspacing="30">
+        <tr>
+            <th>Concultant's Name</th>
+            <th>Hospital Name</th>
+            <th>Specialist</th>
+            <th>Fee</th>
+            <th>Location</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+        @foreach (var s in ViewBag.record)
+        {
+            <tr>
+                <td>@s.Name</td>
+                <td>@s.HospitalName</td>
+                <td>@s.Specialist</td>
+                <td>@s.Fee</td>
+                <td>@s.Location</td>
+                <td><a href="~/HospitalManagement/Edit/@s.Id">Edit</a></td>
+                <td><a href="~/HospitalManagement/Delete/@s.Id">Delete</a></td>
+            </tr>
+        }
+
+
+    </table>
+
+
+    <br /><br />
+    <table border="0" align="center" cellspacing="30">
+        <tr>
+            <td><a class="active" href="~/HospitalManagement/RegisterDoctors">Register a doctor</a></td>
+            <td><a href="~/HospitalManagement/SearchDetails">Edit or Delete a Doctor's Rcord</a></td>
+            <td><a href="~/HospitalManagement/DoctorsDetaiLs">View Records</a></td>
+        <tr>
+    </table>
+</body>
+</html>
